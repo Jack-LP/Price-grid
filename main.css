@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root{
+    --cyanColor: hsl(179, 62%, 43%);
+    --lightCyanColor: #4abebd;
+    --brightYellow: hsl(71, 73%, 54%);
+    --lightGray: hsl(204, 43%, 93%);
+    --grayishBlue: hsl(218, 22%, 67%);
+}
+
+body{
+    background-color: var(--lightGray);
+    margin: 0;
+    height: 100vh;
+}
+
+.container{
+    width: 700px;
+    height: 500px;
+    background-color: #fff;
+    font-family: 'Karla', sans-serif;
+    border-radius: 15px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 45% 55%;
+    grid-template-areas: "join join"
+                        "subscribe why";
+}
+
+.join{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: block;
+    grid-area: join;
+    background-color: #fff;
+    padding: 1rem 4rem 1rem 2rem;
+}
+
+.join h2{
+    color: var(--cyanColor);
+}
+
+.join h3{
+    color: var(--brightYellow);
+}
+
+.join p{
+    font-size: 1.1rem;
+    color: var(--grayishBlue);
+    line-height: 1.75rem;
+}
+
+.subscribe{
+    border-bottom-left-radius: 15px;
+    grid-area: subscribe;
+    background-color: var(--cyanColor);
+    padding: 1rem 2rem;
+}
+
+.subscribe h3{
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.subscribe p{
+    color: #fff;
+    margin-top: 0;
+}
+
+.price{
+    display: flex;
+}
+
+.price .pmonth{
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: lighter;
+    align-self: center;
+    margin-top: 0;
+}
+
+.price h1{
+    color: #fff;
+    padding-right: 1rem;
+}
+
+.signUp-btn{
+    margin-top: 1rem;
+    border: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 0.75rem 6rem;
+    background-color: #bfdf32;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition-duration: .2s;
+}
+
+.signUp-btn:hover {
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    transform: translateY(-7px);
+}
+
+.why{
+    border-bottom-right-radius: 15px;
+    grid-area: why;
+    background-color: var(--lightCyanColor);
+    padding: 1rem 2rem;
+}
+
+.why h3{
+    color: #fff;
+}
+
+.why ul{
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.4rem;
+}
+
+@media only screen and (max-width: 720px) {
+    .container{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "join"
+                            "subscribe"
+                            "why";
+    }
+
+    .subscribe{
+        border-radius: 0;
+    }
+
+    .why{
+        border-bottom-left-radius: 15px;
+    }
+
+}
+
